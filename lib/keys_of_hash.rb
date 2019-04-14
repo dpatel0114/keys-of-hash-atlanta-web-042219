@@ -3,21 +3,16 @@ require 'pry'
 class Hash
 
 
-  def keys_of(animals)
+  def keys_of(*args)
     # code goes here
     # binding.pry
-    if animals == 'Panama'
-      return ["red-footed tortoise"]
-    elsif animals == 'Madagascar'
-      return ["aye-aye", "tomato frog"]
-    elsif animals == 'Australia'
-      return ["sugar glider", "kangaroo", "koala"]
-
-
+result = []
+  map do |key, value|
+    # binding.pry
+      if  [*args].include?(value)
+         result << key
+      end
     end
-    return animals[1]
-
-  end
-
-
+    result
 end
+  end
